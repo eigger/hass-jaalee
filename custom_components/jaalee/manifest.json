@@ -1,0 +1,17 @@
+{
+  "domain": "jaalee",
+  "name": "Jaalee",
+  "bluetooth": [
+    {
+      "manufacturer_id": 76,
+      "connectable": false
+    }
+  ],
+  "codeowners": ["@eigger"],
+  "config_flow": true,
+  "dependencies": ["bluetooth_adapters"],
+  "documentation": "https://github.com/eigger/hass-jaalee",
+  "issue_tracker": "https://www.github.com/eigger/hass-jaalee/issues",
+  "iot_class": "local_push",
+  "version": "1.0.0"
+}
