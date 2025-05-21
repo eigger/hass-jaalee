@@ -49,6 +49,10 @@ class JaaleeBluetoothDeviceData(BluetoothData):
         """Parser for Jaalee sensors"""
         if len(data) != 24:
             return False
+        
+        device = (data[16] << 8) + data[17]
+        if device != 0xF525:
+            return False
 
         # determine the device type
         manufacturer = "Jaalee"

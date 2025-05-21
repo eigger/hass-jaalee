@@ -11,7 +11,7 @@
   "config_flow": true,
   "dependencies": ["bluetooth_adapters"],
   "documentation": "https://github.com/eigger/hass-jaalee",
-  "issue_tracker": "https://www.github.com/eigger/hass-jaalee/issues",
+  "issue_tracker": "https://github.com/eigger/hass-jaalee/issues",
   "iot_class": "local_push",
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
