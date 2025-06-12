@@ -66,7 +66,7 @@ class JaaleeBluetoothDeviceData(BluetoothData):
         temperature = round(((temperature / 65535.0) * 175 - 45) * multiplier) / multiplier
         humidity = round(((humidity / 65535.0) * 100) * multiplier) / multiplier
 
-        identifier = service_info.address.replace(":", "")[-8:]
+        identifier = service_info.address.replace(":", "")
         self.set_title(f"JHT {identifier}")
         self.set_device_name(f"{manufacturer} JHT {identifier}")
         self.set_device_type(f"Temperature/Humidity sensor")
