@@ -13,5 +13,5 @@
   "documentation": "https://github.com/eigger/hass-jaalee",
   "issue_tracker": "https://github.com/eigger/hass-jaalee/issues",
   "iot_class": "local_push",
-  "version": "1.0.1"
+  "version": "1.0.2"
 }
