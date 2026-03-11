@@ -1,5 +1,9 @@
-[![integration usage](https://img.shields.io/badge/dynamic/json?color=41BDF5&logo=home-assistant&label=integration%20usage&suffix=%20installs&cacheSeconds=15600&url=https://analytics.home-assistant.io/custom_integrations.json&query=%24.jaalee.total)](https://github.com/eigger/hass-jaalee)
 # hass-jaalee
+[![HACS](https://img.shields.io/badge/HACS-Custom-41BDF5.svg?logo=home-assistant)](https://hacs.xyz/)
+[![GitHub Release](https://img.shields.io/github/release/eigger/hass-jaalee.svg)](https://github.com/eigger/hass-jaalee/releases)
+[![License](https://img.shields.io/github/license/eigger/hass-jaalee)](https://github.com/eigger/hass-jaalee/blob/main/LICENSE)
+![integration usage](https://img.shields.io/badge/dynamic/json?color=41BDF5&logo=home-assistant&label=integration%20usage&suffix=%20installs&cacheSeconds=15600&url=https://analytics.home-assistant.io/custom_integrations.json&query=%24.jaalee.total)
+
 Jaalee BLE Sensor Home Assistant Integration
 
 ## 💬 Feedback & Support
