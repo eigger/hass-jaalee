@@ -1,3 +1,4 @@
+[![integration usage](https://img.shields.io/badge/dynamic/json?color=41BDF5&logo=home-assistant&label=integration%20usage&suffix=%20installs&cacheSeconds=15600&url=https://analytics.home-assistant.io/custom_integrations.json&query=%24.jaalee.total)](https://github.com/eigger/hass-jaalee)
 # hass-jaalee
 Jaalee BLE Sensor Home Assistant Integration
 
