@@ -44,12 +44,12 @@ class JaaleeBluetoothDeviceData(BluetoothData):
         return None
 
     def _parse_jaalee(
-        self, service_info: BluetoothServiceInfo, data: bytes
+        self, service_info: BluetoothServiceInfoBleak, data: bytes
     ) -> bool:
         """Parser for Jaalee sensors"""
         if len(data) != 24:
             return False
-        
+
         device = (data[16] << 8) + data[17]
         if device != 0xF525:
             return False
@@ -59,17 +59,17 @@ class JaaleeBluetoothDeviceData(BluetoothData):
         bettery = data[23]
         temperature = (data[18] << 8) + data[19]
         humidity = (data[20] << 8) + data[21]
-        
+
         multiplier = pow(10.0, 2)
 
-        #http://sensor.jaalee.com/scan_api.html
+        # http://sensor.jaalee.com/scan_api.html
         temperature = round(((temperature / 65535.0) * 175 - 45) * multiplier) / multiplier
         humidity = round(((humidity / 65535.0) * 100) * multiplier) / multiplier
 
         identifier = service_info.address.replace(":", "")[-4:]
         self.set_title(f"JHT {identifier}")
         self.set_device_name(f"{manufacturer} JHT {identifier}")
-        self.set_device_type(f"Temperature/Humidity sensor")
+        self.set_device_type("Temperature/Humidity sensor")
         self.set_device_manufacturer(manufacturer)
 
         self.update_predefined_sensor(SensorLibrary.BATTERY__PERCENTAGE, round(bettery, 1))

@@ -18,14 +18,13 @@ __version__ = "1.0.0"
 
 __all__ = [
     "BinarySensorDeviceClass",
+    "DeviceClass",
+    "DeviceKey",
     "JaaleeBluetoothDeviceData",
     "SensorDescription",
     "SensorDeviceClass",
     "SensorDeviceInfo",
-    "DeviceClass",
-    "DeviceKey",
     "SensorUpdate",
-    "SensorDeviceInfo",
     "SensorValue",
     "Units",
 ]
