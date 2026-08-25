@@ -22,14 +22,13 @@ from homeassistant.components.sensor import (
 from homeassistant.const import (
     ATTR_SW_VERSION,
     ATTR_HW_VERSION,
-    CONCENTRATION_MICROGRAMS_PER_CUBIC_METER,
-    CONCENTRATION_PARTS_PER_MILLION,
     DEGREE,
     LIGHT_LUX,
     PERCENTAGE,
     SIGNAL_STRENGTH_DECIBELS_MILLIWATT,
     EntityCategory,
     UnitOfConductivity,
+    UnitOfDensity,
     UnitOfElectricCurrent,
     UnitOfElectricPotential,
     UnitOfEnergy,
@@ -37,6 +36,7 @@ from homeassistant.const import (
     UnitOfMass,
     UnitOfPower,
     UnitOfPressure,
+    UnitOfRatio,
     UnitOfSpeed,
     UnitOfTemperature,
     UnitOfTime,
@@ -96,7 +96,7 @@ SENSOR_DESCRIPTIONS = {
     ): SensorEntityDescription(
         key=f"{JaaleeSensorDeviceClass.CO2}_{Units.CONCENTRATION_PARTS_PER_MILLION}",
         device_class=SensorDeviceClass.CO2,
-        native_unit_of_measurement=CONCENTRATION_PARTS_PER_MILLION,
+        native_unit_of_measurement=UnitOfRatio.PARTS_PER_MILLION,
         state_class=SensorStateClass.MEASUREMENT,
     ),
     # Current (Ampere)
@@ -224,7 +224,7 @@ SENSOR_DESCRIPTIONS = {
     ): SensorEntityDescription(
         key=f"{JaaleeSensorDeviceClass.PM10}_{Units.CONCENTRATION_MICROGRAMS_PER_CUBIC_METER}",
         device_class=SensorDeviceClass.PM10,
-        native_unit_of_measurement=CONCENTRATION_MICROGRAMS_PER_CUBIC_METER,
+        native_unit_of_measurement=UnitOfDensity.MICROGRAMS_PER_CUBIC_METER,
         state_class=SensorStateClass.MEASUREMENT,
     ),
     # PM2.5 (µg/m3)
@@ -234,7 +234,7 @@ SENSOR_DESCRIPTIONS = {
     ): SensorEntityDescription(
         key=f"{JaaleeSensorDeviceClass.PM25}_{Units.CONCENTRATION_MICROGRAMS_PER_CUBIC_METER}",
         device_class=SensorDeviceClass.PM25,
-        native_unit_of_measurement=CONCENTRATION_MICROGRAMS_PER_CUBIC_METER,
+        native_unit_of_measurement=UnitOfDensity.MICROGRAMS_PER_CUBIC_METER,
         state_class=SensorStateClass.MEASUREMENT,
     ),
     # Power (Watt)
@@ -327,7 +327,7 @@ SENSOR_DESCRIPTIONS = {
     ): SensorEntityDescription(
         key=f"{JaaleeSensorDeviceClass.VOLATILE_ORGANIC_COMPOUNDS}_{Units.CONCENTRATION_MICROGRAMS_PER_CUBIC_METER}",
         device_class=SensorDeviceClass.VOLATILE_ORGANIC_COMPOUNDS,
-        native_unit_of_measurement=CONCENTRATION_MICROGRAMS_PER_CUBIC_METER,
+        native_unit_of_measurement=UnitOfDensity.MICROGRAMS_PER_CUBIC_METER,
         state_class=SensorStateClass.MEASUREMENT,
     ),
     # Voltage (volt)
