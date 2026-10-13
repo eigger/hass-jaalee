@@ -2,12 +2,8 @@
 
 from __future__ import annotations
 
+from functools import lru_cache
 from typing import cast
-
-from .jaalee_ble import SensorDeviceClass as JaaleeSensorDeviceClass, SensorUpdate, Units
-from .jaalee_ble.const import (
-    ExtendedSensorDeviceClass as JaaleeExtendedSensorDeviceClass,
-)
 
 from homeassistant.components.bluetooth.passive_update_processor import (
     PassiveBluetoothDataUpdate,
@@ -20,8 +16,11 @@ from homeassistant.components.sensor import (
     SensorStateClass,
 )
 from homeassistant.const import (
-    ATTR_SW_VERSION,
     ATTR_HW_VERSION,
+    ATTR_MANUFACTURER,
+    ATTR_MODEL,
+    ATTR_NAME,
+    ATTR_SW_VERSION,
     DEGREE,
     LIGHT_LUX,
     PERCENTAGE,
@@ -44,11 +43,22 @@ from homeassistant.const import (
     UnitOfVolumeFlowRate,
 )
 from homeassistant.core import HomeAssistant
+from homeassistant.helpers.device_registry import DeviceInfo
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.sensor import sensor_device_info_to_hass_device_info
 
 from .coordinator import JaaleePassiveBluetoothDataProcessor
 from .device import device_key_to_bluetooth_entity_key
+from .jaalee_ble import (
+    SensorDeviceClass as JaaleeSensorDeviceClass,
+)
+from .jaalee_ble import (
+    SensorDeviceInfo,
+    SensorUpdate,
+    Units,
+)
+from .jaalee_ble.const import (
+    ExtendedSensorDeviceClass as JaaleeExtendedSensorDeviceClass,
+)
 from .types import JaaleeConfigEntry
 
 SENSOR_DESCRIPTIONS = {
@@ -392,14 +402,40 @@ SENSOR_DESCRIPTIONS = {
     ),
 }
 
-def hass_device_info(sensor_device_info):
-    device_info = sensor_device_info_to_hass_device_info(sensor_device_info)
-    if sensor_device_info.sw_version is not None:
-        device_info[ATTR_SW_VERSION] = sensor_device_info.sw_version
-    if sensor_device_info.hw_version is not None:
-        device_info[ATTR_HW_VERSION] = sensor_device_info.hw_version
+
+def hass_device_info(sensor_device_info: SensorDeviceInfo) -> DeviceInfo:
+    """Convert sensor device info and include its firmware and hardware versions."""
+    return _device_info(
+        sensor_device_info.name,
+        sensor_device_info.manufacturer,
+        sensor_device_info.model,
+        sensor_device_info.sw_version,
+        sensor_device_info.hw_version,
+    )
+
+
+@lru_cache(maxsize=64)
+def _device_info(
+    name: str | None,
+    manufacturer: str | None,
+    model: str | None,
+    sw_version: str | None,
+    hw_version: str | None,
+) -> DeviceInfo:
+    """Return cached device info for these values, leaving None values unset."""
+    device_info = DeviceInfo()
+    for key, value in (
+        (ATTR_NAME, name),
+        (ATTR_MANUFACTURER, manufacturer),
+        (ATTR_MODEL, model),
+        (ATTR_SW_VERSION, sw_version),
+        (ATTR_HW_VERSION, hw_version),
+    ):
+        if value is not None:
+            device_info[key] = value
     return device_info
-    
+
+
 def sensor_update_to_bluetooth_data_update(
     sensor_update: SensorUpdate,
 ) -> PassiveBluetoothDataUpdate[float | None]:
