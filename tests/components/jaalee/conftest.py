@@ -24,7 +24,10 @@ VALID_JAALEE_DATA = bytes(16) + b"\xf5\x25\x66\x66\x80\x00\x00\x64"
 
 
 def _make_ble_device(address: str, name: str, rssi: int = -55) -> BLEDevice:
-    return BLEDevice(address, name, details={})
+    try:
+        return BLEDevice(address, name, {}, rssi)
+    except TypeError:
+        return BLEDevice(address, name, {})
 
 
 def make_advertisement_data(
