@@ -108,13 +108,6 @@ async def test_binary_sensor_entity_lifecycle(
     await hass.async_block_till_done()
 
     door_state = hass.states.get("binary_sensor.door_sensor_door")
-    if not door_state:
-        # Search by substring if entity id naming varies
-        for state in hass.states.async_all():
-            if "door" in state.entity_id or "opening" in state.entity_id:
-                door_state = state
-                break
-
     assert door_state is not None
     assert door_state.state == STATE_ON
     assert door_state.attributes.get("device_class") == BinarySensorDeviceClass.OPENING

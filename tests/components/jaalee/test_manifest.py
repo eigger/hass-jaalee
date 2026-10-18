@@ -19,7 +19,7 @@ def test_manifest() -> None:
     assert manifest["codeowners"] == ["@eigger"]
     assert manifest["config_flow"] is True
     assert manifest["iot_class"] == "local_push"
-    assert manifest["version"] == "1.0.6"
+    assert manifest["version"] == "1.0.7"
     assert "bluetooth_adapters" in manifest["dependencies"]
 
     # Bluetooth advertisement matchers
