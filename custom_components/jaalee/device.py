@@ -2,11 +2,11 @@
 
 from __future__ import annotations
 
-from .jaalee_ble import DeviceKey
-
 from homeassistant.components.bluetooth.passive_update_processor import (
     PassiveBluetoothEntityKey,
 )
+
+from .jaalee_ble import DeviceKey
 
 
 def device_key_to_bluetooth_entity_key(

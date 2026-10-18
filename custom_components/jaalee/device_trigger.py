@@ -5,7 +5,6 @@ from __future__ import annotations
 from typing import TYPE_CHECKING, Any
 
 import voluptuous as vol
-
 from homeassistant.components.device_automation import (
     DEVICE_TRIGGER_BASE_SCHEMA,
     InvalidDeviceAutomationConfig,
@@ -24,7 +23,6 @@ from homeassistant.helpers.trigger import TriggerActionType, TriggerInfo
 from homeassistant.helpers.typing import ConfigType
 
 from .const import (
-    JAALEE_BLE_EVENT,
     CONF_DISCOVERED_EVENT_CLASSES,
     CONF_SUBTYPE,
     DOMAIN,
@@ -32,6 +30,7 @@ from .const import (
     EVENT_CLASS_BUTTON,
     EVENT_CLASS_DIMMER,
     EVENT_TYPE,
+    JAALEE_BLE_EVENT,
 )
 
 EVENT_TYPES_BY_EVENT_CLASS = {

@@ -1,0 +1,39 @@
+# Shared standards; upstream action SHAs verified 2026-10-18.
+name: Tests
+'on':
+  push:
+    branches:
+      - main
+      - master
+  pull_request: null
+  workflow_dispatch: null
+  schedule:
+    - cron: "23 4 * * 1"
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  current:
+    uses: eigger/hass-repo-standards/.github/workflows/python-tests.yml@c696e15c164daa6c7deca4140b899bd0e80e8846
+    with:
+      domain: jaalee
+      python-versions: '["3.14"]'
+      lint-python-version: '3.14'
+      requirements: requirements_test.txt
+      expected-ha-version: '2026.10.2'
+      test-profile: ha
+      ha-components: 'bluetooth sensor binary_sensor event'
+      dependency-modes: '["current"]'
+  minimum-ha:
+    uses: eigger/hass-repo-standards/.github/workflows/python-tests.yml@c696e15c164daa6c7deca4140b899bd0e80e8846
+    with:
+      domain: jaalee
+      python-versions: '["3.13"]'
+      lint-python-version: '3.14'
+      requirements: requirements_test_min.txt
+      expected-ha-version: '2025.1.0'
+      test-profile: ha
+      ha-components: 'bluetooth sensor binary_sensor event'
+      dependency-modes: '["current"]'

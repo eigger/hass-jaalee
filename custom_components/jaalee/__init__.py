@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from functools import partial
 import logging
-from .jaalee_ble import JaaleeBluetoothDeviceData, SensorUpdate
+from functools import partial
+
 from homeassistant.components.bluetooth import (
     BluetoothScanningMode,
     BluetoothServiceInfoBleak,
@@ -21,11 +21,13 @@ from .const import (
     JaaleeBleEvent,
 )
 from .coordinator import JaaleePassiveBluetoothProcessorCoordinator
+from .jaalee_ble import JaaleeBluetoothDeviceData, SensorUpdate
 from .types import JaaleeConfigEntry
 
 PLATFORMS: list[Platform] = [Platform.BINARY_SENSOR, Platform.EVENT, Platform.SENSOR]
 
 _LOGGER = logging.getLogger(__name__)
+
 
 def process_service_info(
     hass: HomeAssistant,
@@ -84,6 +86,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: JaaleeConfigEntry) -> bo
 async def async_unload_entry(hass: HomeAssistant, entry: JaaleeConfigEntry) -> bool:
     """Unload a config entry."""
     return await hass.config_entries.async_unload_platforms(entry, PLATFORMS)
+
 
 async def get_entry_id_from_device(hass, device_id: str) -> str:
     device_reg = dr.async_get(hass)

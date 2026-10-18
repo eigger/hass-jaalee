@@ -27,7 +27,6 @@ from homeassistant.const import (
     SIGNAL_STRENGTH_DECIBELS_MILLIWATT,
     EntityCategory,
     UnitOfConductivity,
-    UnitOfDensity,
     UnitOfElectricCurrent,
     UnitOfElectricPotential,
     UnitOfEnergy,
@@ -35,7 +34,6 @@ from homeassistant.const import (
     UnitOfMass,
     UnitOfPower,
     UnitOfPressure,
-    UnitOfRatio,
     UnitOfSpeed,
     UnitOfTemperature,
     UnitOfTime,
@@ -43,6 +41,29 @@ from homeassistant.const import (
     UnitOfVolumeFlowRate,
 )
 from homeassistant.core import HomeAssistant
+
+try:
+    from homeassistant.const import UnitOfDensity
+except ImportError:
+    from homeassistant.const import (
+        CONCENTRATION_MICROGRAMS_PER_CUBIC_METER as _MICROGRAMS_PER_CUBIC_METER,
+    )
+
+    class UnitOfDensity:  # type: ignore[no-redef]
+        MICROGRAMS_PER_CUBIC_METER = _MICROGRAMS_PER_CUBIC_METER
+
+
+try:
+    from homeassistant.const import UnitOfRatio
+except ImportError:
+    from homeassistant.const import (
+        CONCENTRATION_PARTS_PER_MILLION as _PARTS_PER_MILLION,
+    )
+
+    class UnitOfRatio:  # type: ignore[no-redef]
+        PARTS_PER_MILLION = _PARTS_PER_MILLION
+
+
 from homeassistant.helpers.device_registry import DeviceInfo
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
