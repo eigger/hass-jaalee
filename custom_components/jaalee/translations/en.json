@@ -1,0 +1,78 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "description": "Choose a device to set up",
+        "data": {
+          "address": "Device"
+        }
+      },
+      "bluetooth_confirm": {
+        "description": "Do you want to set up {name}?"
+      },
+      "get_encryption_key": {
+        "description": "The sensor data broadcast by the sensor is encrypted. In order to decrypt it we need a 32 character hexadecimal bindkey.",
+        "data": {
+          "bindkey": "Bindkey"
+        }
+      }
+    },
+    "error": {
+      "decryption_failed": "The provided bindkey did not work, sensor data could not be decrypted. Please check it and try again.",
+      "expected_32_characters": "Expected a 32 character hexadecimal bindkey."
+    },
+    "abort": {
+      "reauth_successful": "Re-authentication was successful",
+      "no_devices_found": "No devices found on the network",
+      "already_in_progress": "This is already being configured. Finish the existing configuration before starting again.",
+      "already_configured": "Device is already configured"
+    }
+  },
+  "device_automation": {
+    "trigger_subtype": {
+      "press": "Press",
+      "double_press": "Double Press",
+      "triple_press": "Triple Press",
+      "long_press": "Long Press",
+      "long_double_press": "Long Double Press",
+      "long_triple_press": "Long Triple Press",
+      "hold_press": "Hold Press",
+      "rotate_right": "Rotate Right",
+      "rotate_left": "Rotate Left"
+    },
+    "trigger_type": {
+      "button": "Button \"{subtype}\"",
+      "dimmer": "Dimmer \"{subtype}\""
+    }
+  },
+  "entity": {
+    "event": {
+      "button": {
+        "state_attributes": {
+          "event_type": {
+            "state": {
+              "press": "Press",
+              "double_press": "Double press",
+              "triple_press": "Triple press",
+              "long_press": "Long press",
+              "long_double_press": "Long double press",
+              "long_triple_press": "Long triple press",
+              "hold_press": "Hold press"
+            }
+          }
+        }
+      },
+      "dimmer": {
+        "state_attributes": {
+          "event_type": {
+            "state": {
+              "rotate_left": "Rotate left",
+              "rotate_right": "Rotate right"
+            }
+          }
+        }
+      }
+    }
+  }
+}
