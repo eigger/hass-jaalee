@@ -1,0 +1,5 @@
+# Historical support baseline; excluded from automatic dependency updates.
+homeassistant==2025.1.0
+pytest-homeassistant-custom-component==0.13.201
+bluetooth-sensor-state-data==1.7.5
+sensor-state-data==2.20.0

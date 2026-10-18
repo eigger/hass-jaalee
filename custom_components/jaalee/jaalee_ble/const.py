@@ -2,6 +2,7 @@ from sensor_state_data import (
     BaseDeviceClass,
 )
 
+
 class ExtendedSensorDeviceClass(BaseDeviceClass):
     """Device class for additional sensors (compared to sensor-state-data)."""
 
@@ -22,4 +23,3 @@ class ExtendedSensorDeviceClass(BaseDeviceClass):
 
     # Precipitation
     PRECIPITATION = "precipitation"
-

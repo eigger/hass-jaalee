@@ -3,8 +3,6 @@
 from collections.abc import Callable
 from logging import Logger
 
-from .jaalee_ble import JaaleeBluetoothDeviceData, SensorUpdate
-
 from homeassistant.components.bluetooth import (
     BluetoothScanningMode,
     BluetoothServiceInfoBleak,
@@ -15,6 +13,7 @@ from homeassistant.components.bluetooth.passive_update_processor import (
 )
 from homeassistant.core import HomeAssistant
 
+from .jaalee_ble import JaaleeBluetoothDeviceData, SensorUpdate
 from .types import JaaleeConfigEntry
 
 

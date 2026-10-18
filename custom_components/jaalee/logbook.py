@@ -8,7 +8,7 @@ from homeassistant.components.logbook import LOGBOOK_ENTRY_MESSAGE, LOGBOOK_ENTR
 from homeassistant.core import Event, HomeAssistant, callback
 from homeassistant.helpers import device_registry as dr
 
-from .const import JAALEE_BLE_EVENT, DOMAIN, JaaleeBleEvent
+from .const import DOMAIN, JAALEE_BLE_EVENT, JaaleeBleEvent
 
 
 @callback

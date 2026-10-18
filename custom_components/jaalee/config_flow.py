@@ -2,13 +2,11 @@
 
 from __future__ import annotations
 
-from collections.abc import Mapping
 import dataclasses
+from collections.abc import Mapping
 from typing import Any
 
-from .jaalee_ble import JaaleeBluetoothDeviceData as DeviceData
 import voluptuous as vol
-
 from homeassistant.components import onboarding
 from homeassistant.components.bluetooth import (
     BluetoothServiceInfoBleak,
@@ -18,6 +16,7 @@ from homeassistant.config_entries import SOURCE_REAUTH, ConfigFlow, ConfigFlowRe
 from homeassistant.const import CONF_ADDRESS
 
 from .const import DOMAIN
+from .jaalee_ble import JaaleeBluetoothDeviceData as DeviceData
 
 
 @dataclasses.dataclass

@@ -1,0 +1,17 @@
+{
+  "repository": "eigger/hass-jaalee",
+  "default_branch": "master",
+  "domain": "jaalee",
+  "hacs": "custom",
+  "release": true,
+  "readmes": [
+    "README.md",
+    "README.ko.md"
+  ],
+  "tests_workflow": "tests.yml",
+  "validate_workflow": "validate.yml",
+  "installation_links": {
+    "README.md": "#installation",
+    "README.ko.md": "#설치"
+  }
+}

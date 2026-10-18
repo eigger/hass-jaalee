@@ -2,11 +2,6 @@
 
 from __future__ import annotations
 
-from .jaalee_ble import (
-    BinarySensorDeviceClass as JaaleeBinarySensorDeviceClass,
-    SensorUpdate,
-)
-
 from homeassistant.components.binary_sensor import (
     BinarySensorDeviceClass,
     BinarySensorEntity,
@@ -22,6 +17,12 @@ from homeassistant.helpers.sensor import sensor_device_info_to_hass_device_info
 
 from .coordinator import JaaleePassiveBluetoothDataProcessor
 from .device import device_key_to_bluetooth_entity_key
+from .jaalee_ble import (
+    BinarySensorDeviceClass as JaaleeBinarySensorDeviceClass,
+)
+from .jaalee_ble import (
+    SensorUpdate,
+)
 from .types import JaaleeConfigEntry
 
 BINARY_SENSOR_DESCRIPTIONS = {
