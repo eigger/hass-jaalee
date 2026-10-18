@@ -1,12 +1,12 @@
 # Shared standards; upstream action SHAs verified 2026-10-18.
 name: Tests
-'on':
+on:
   push:
     branches:
       - main
       - master
-  pull_request: null
-  workflow_dispatch: null
+  pull_request:
+  workflow_dispatch:
   schedule:
     - cron: "23 4 * * 1"
 permissions:
