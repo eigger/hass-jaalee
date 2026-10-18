@@ -22,8 +22,8 @@
 |---|---|---|---|---|---|
 | 로컬 current / PASS | `HEAD` | 3.14.5 / HA 2026.10.2 / 0.13.373 | bluetooth-sensor-state-data 1.9.0, sensor-state-data 2.20.0 | `ruff check .`, `ruff format --check .` 통과, `pytest tests/components/jaalee/` 30 passed, `sync_badges.py --check` 통과 | 실물 BLE 기기 |
 | 로컬 최소 HA 2025.1.0 / PASS | `HEAD` | 3.13.14 / HA 2025.1.0 / 0.13.201 | bluetooth-sensor-state-data 1.7.5, sensor-state-data 2.20.0 | `pytest tests/components/jaalee/` 30 passed | 실물 BLE 기기 |
-| CI current / TODO | PR 대기 | 3.14 / 2026.10.2 / 0.13.373 | 최신 의존성 | CI 실행 대기 | 실물 BLE 기기 |
-| CI 최소 HA 2025.1.0 / TODO | PR 대기 | 3.13 / 2025.1.0 / 0.13.201 | 최소 의존성 | CI 실행 대기 | 실물 BLE 기기 |
+| CI current / PASS | `9b16737` | 3.14 / 2026.10.2 / 0.13.373 | 최신 의존성 | [Run 39116397850](https://github.com/eigger/hass-jaalee/actions/runs/39116397850) (lint 8s, test 44s 통과) | 실물 BLE 기기 |
+| CI 최소 HA 2025.1.0 / PASS | `9b16737` | 3.13 / 2025.1.0 / 0.13.201 | 최소 의존성 | [Run 39116397850](https://github.com/eigger/hass-jaalee/actions/runs/39116397850) (lint 9s, test 1m35s 통과) | 실물 BLE 기기 |
 
 ## 항목
 
@@ -73,5 +73,5 @@
 
 ## 남은 작업
 
-1. GitHub PR 생성 및 원격 CI 실행 확인.
+1. GitHub PR #6 생성 및 원격 CI(Validate 39116397843, Tests 39116397850) 100% 통과 확인 완료.
 2. 실물 BLE Jaalee 센서 기기 보유 시 실기기 연동 확인 (현재는 모의 및 패킷 단위 런타임 100% 검증 완료).
