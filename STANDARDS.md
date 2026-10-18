@@ -14,7 +14,7 @@
 - 적용 후 지원 최소 HA: 2025.1.0 (변경 없음, 역사적 기준 보존)
 - current HA 테스트 환경: Python 3.14.5, pytest-homeassistant-custom-component 0.13.373, HA 2026.10.2
 - 최소 HA 검증 환경: Python 3.13.14, pytest-homeassistant-custom-component 0.13.201, HA 2025.1.0
-- 최소 package 검증: bluetooth-sensor-state-data 1.9.0, sensor-state-data 2.20.0
+- 최소 package 검증: bluetooth-sensor-state-data 1.7.5 (최소 HA), sensor-state-data 2.20.0
 
 ## 예외
 

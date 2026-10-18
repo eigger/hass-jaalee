@@ -21,7 +21,7 @@
 | 축 / 상태 | 통합 커밋 | Python / HA / 플러그인 | 대상 패키지 | 명령·결과 | 미검증 범위 |
 |---|---|---|---|---|---|
 | 로컬 current / PASS | `HEAD` | 3.14.5 / HA 2026.10.2 / 0.13.373 | bluetooth-sensor-state-data 1.9.0, sensor-state-data 2.20.0 | `ruff check .`, `ruff format --check .` 통과, `pytest tests/components/jaalee/` 30 passed, `sync_badges.py --check` 통과 | 실물 BLE 기기 |
-| 로컬 최소 HA 2025.1.0 / PASS | `HEAD` | 3.13.14 / HA 2025.1.0 / 0.13.201 | bluetooth-sensor-state-data 1.9.0, sensor-state-data 2.20.0 | `pytest tests/components/jaalee/` 30 passed | 실물 BLE 기기 |
+| 로컬 최소 HA 2025.1.0 / PASS | `HEAD` | 3.13.14 / HA 2025.1.0 / 0.13.201 | bluetooth-sensor-state-data 1.7.5, sensor-state-data 2.20.0 | `pytest tests/components/jaalee/` 30 passed | 실물 BLE 기기 |
 | CI current / TODO | PR 대기 | 3.14 / 2026.10.2 / 0.13.373 | 최신 의존성 | CI 실행 대기 | 실물 BLE 기기 |
 | CI 최소 HA 2025.1.0 / TODO | PR 대기 | 3.13 / 2025.1.0 / 0.13.201 | 최소 의존성 | CI 실행 대기 | 실물 BLE 기기 |
 
