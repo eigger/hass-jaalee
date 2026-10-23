@@ -7,7 +7,7 @@
 [![Tests](https://img.shields.io/github/actions/workflow/status/eigger/hass-jaalee/tests.yml?branch=master&style=flat&label=Tests)](https://github.com/eigger/hass-jaalee/actions/workflows/tests.yml)
 [![Validate](https://img.shields.io/github/actions/workflow/status/eigger/hass-jaalee/validate.yml?branch=master&style=flat&label=Validate)](https://github.com/eigger/hass-jaalee/actions/workflows/validate.yml)
 [![License](https://img.shields.io/github/license/eigger/hass-jaalee?style=flat)](LICENSE)
-[![Analytics reporting installs](https://img.shields.io/badge/dynamic/json?style=flat&color=41BDF5&label=Usage&query=%24.jaalee.total&url=https%3A%2F%2Fanalytics.home-assistant.io%2Fcustom_integrations.json)](https://analytics.home-assistant.io/)
+[![Downloads](https://img.shields.io/github/downloads/eigger/hass-jaalee/total?style=flat&color=41BDF5&label=Downloads)](https://github.com/eigger/hass-jaalee/releases)
 <!-- hass-standards:badges:end -->
 
 [English](README.md) | **한국어**

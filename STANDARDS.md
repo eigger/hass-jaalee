@@ -19,3 +19,12 @@
 ## 예외
 
 현재 등록된 예외 없음.
+
+- Reviewed release standards SHA: `fd4162c0b93fbe8e109f99c787773ae09ba157e1`
+
+
+## 2026-10-23 ZIP release and Downloads update
+
+Base commit: `080e4c63d2524e5fc2ef03537aaf49cc4d78a1f6`. HACS remains Custom. `hacs.json` now selects `jaalee.zip`; publishing the next release builds and attaches that integration ZIP through the pinned central action. Analytics Usage is replaced by Downloads. The archive contains tracked integration files at its root. No existing release/tag/assets are modified.
+
+Implementation and review: root; generated release caller reuses the independently reviewed central ZIP contract. Support minimum, manifest, code, dependencies, README body and prior adoption exceptions are preserved. Verification evidence is recorded in ADOPTION_CHECKLIST.md; this scoped update does not establish full standards compliance.
