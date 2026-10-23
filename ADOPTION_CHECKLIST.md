@@ -75,3 +75,10 @@
 
 1. GitHub PR #6 생성 및 원격 CI(Validate 39116397843, Tests 39116397850) 100% 통과 확인 완료.
 2. 실물 BLE Jaalee 센서 기기 보유 시 실기기 연동 확인 (현재는 모의 및 패킷 단위 런타임 100% 검증 완료).
+
+
+## 2026-10-23 HACS ZIP and Downloads (scoped)
+
+- Target base: `080e4c63d2524e5fc2ef03537aaf49cc4d78a1f6`; reviewed release central: `fd4162c0b93fbe8e109f99c787773ae09ba157e1`.
+- Scope: HACS-04/CI-11 release ZIP and DOC-03/05 Downloads replacing Analytics Usage. No release is created during this update.
+- Validation: pending badge/release contract checks, actionlint, actual local ZIP build and remote PR CI. Full adoption, device and real release upload are not asserted by this partial change.
