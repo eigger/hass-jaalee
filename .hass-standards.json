@@ -2,7 +2,7 @@
   "repository": "eigger/hass-jaalee",
   "default_branch": "master",
   "domain": "jaalee",
-  "hacs": "custom",
+  "hacs": "default",
   "release": true,
   "readmes": [
     "README.md",
@@ -13,5 +13,6 @@
   "installation_links": {
     "README.md": "#installation",
     "README.ko.md": "#설치"
-  }
+  },
+  "hacs_default_evidence": "https://github.com/hacs/default/blob/3fa436ca054956f790d89e6cba4ff1bbdf8d9b26/integration#L1083 (verified 2026-10-24)"
 }

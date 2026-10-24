@@ -2,7 +2,7 @@
 
 <!-- hass-standards:badges:start -->
 [![Release](https://img.shields.io/github/v/release/eigger/hass-jaalee?style=flat)](https://github.com/eigger/hass-jaalee/releases)
-[![HACS Custom](https://img.shields.io/badge/HACS-Custom-41BDF5?style=flat)](#설치)
+[![HACS Default](https://img.shields.io/badge/HACS-Default-41BDF5?style=flat)](#설치)
 [![Home Assistant minimum](https://img.shields.io/badge/HA-%E2%89%A5%202025.1.0-41BDF5?style=flat)](hacs.json)
 [![Tests](https://img.shields.io/github/actions/workflow/status/eigger/hass-jaalee/tests.yml?branch=master&style=flat&label=Tests)](https://github.com/eigger/hass-jaalee/actions/workflows/tests.yml)
 [![Validate](https://img.shields.io/github/actions/workflow/status/eigger/hass-jaalee/validate.yml?branch=master&style=flat&label=Validate)](https://github.com/eigger/hass-jaalee/actions/workflows/validate.yml)
@@ -31,10 +31,13 @@ Jaalee 저전력 블루투스(BLE) 온습도 센서를 위한 Home Assistant 커
 
 ### HACS (권장)
 
-1. Home Assistant에서 HACS 메뉴로 이동합니다.
-2. **통합구성요소** > 우측 상단 점 3개 메뉴 > **사용자 지정 저장소**를 엽니다.
-3. `https://github.com/eigger/hass-jaalee`를 입력하고 범주로 **통합구성요소**를 선택합니다.
-4. **다운로드**를 클릭한 후 Home Assistant를 다시 시작합니다.
+<!-- hass-standards:installation:start -->
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=eigger&repository=hass-jaalee)
+<!-- hass-standards:installation:end -->
+
+1. Home Assistant에서 HACS를 엽니다.
+2. **Jaalee**를 검색해 엽니다.
+3. **다운로드**를 클릭한 후 Home Assistant를 다시 시작합니다.
 
 ### 수동 설치
 
