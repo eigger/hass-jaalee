@@ -2,7 +2,7 @@
 
 <!-- hass-standards:badges:start -->
 [![Release](https://img.shields.io/github/v/release/eigger/hass-jaalee?style=flat)](https://github.com/eigger/hass-jaalee/releases)
-[![HACS Custom](https://img.shields.io/badge/HACS-Custom-41BDF5?style=flat)](#installation)
+[![HACS Default](https://img.shields.io/badge/HACS-Default-41BDF5?style=flat)](#installation)
 [![Home Assistant minimum](https://img.shields.io/badge/HA-%E2%89%A5%202025.1.0-41BDF5?style=flat)](hacs.json)
 [![Tests](https://img.shields.io/github/actions/workflow/status/eigger/hass-jaalee/tests.yml?branch=master&style=flat&label=Tests)](https://github.com/eigger/hass-jaalee/actions/workflows/tests.yml)
 [![Validate](https://img.shields.io/github/actions/workflow/status/eigger/hass-jaalee/validate.yml?branch=master&style=flat&label=Validate)](https://github.com/eigger/hass-jaalee/actions/workflows/validate.yml)
@@ -31,10 +31,13 @@ See [docs/user-guide.md](docs/user-guide.md) and [docs/troubleshooting.md](docs/
 
 ### HACS (Recommended)
 
+<!-- hass-standards:installation:start -->
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=eigger&repository=hass-jaalee)
+<!-- hass-standards:installation:end -->
+
 1. Open HACS in Home Assistant.
-2. Go to **Integrations** > Three dots menu (top right) > **Custom repositories**.
-3. Add `https://github.com/eigger/hass-jaalee` with category **Integration**.
-4. Click **Download**, then restart Home Assistant.
+2. Search for **Jaalee** and open it.
+3. Click **Download**, then restart Home Assistant.
 
 ### Manual Installation
 
