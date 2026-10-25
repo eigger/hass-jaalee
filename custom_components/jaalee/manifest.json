@@ -7,6 +7,9 @@
       "connectable": false
     }
   ],
+  "categories": [
+    "sensors.temperature_humidity"
+  ],
   "codeowners": [
     "@eigger"
   ],

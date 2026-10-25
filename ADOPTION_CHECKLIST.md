@@ -132,3 +132,16 @@ TEST-03 tests/conftest.py: must match the central template exactly
 TEST-08 tests/components/jaalee/conftest.py: Exactly one ordered domain-fixtures marker pair required
 ```
 - 독립 리뷰: 별도 review_checker_rollout 담당자가 19개 리포의 workflow 69개·기존 job 100개를 구조 비교했습니다. 새 CI 회귀 지적 없음. 기존 job ID·입력·권한·지원 최소와 통합 코드 보존 및 새 standards job의 중앙 템플릿 일치 확인. 실행 변경 없는 이 기록 추가 전 작업 트리를 검토했습니다.
+
+
+## 2026-10-25 CI 실패 보완 검증
+
+- 이전 부분 갱신의 실패 진단을 실제 수정했습니다. 표준 README 관리 영역과 실제 설치 앵커를 중앙 렌더러로 적용하고, 제품 기능에 근거한 manifest categories 및 검토 근거를 기록했습니다. 기존 제품별 사용 설명·지원 최소·회귀 테스트를 보존합니다.
+- 범위: custom_components namespace 파일, 정확한 중앙 루트 테스트 설정·빈 package 파일, domain fixture 관리 영역을 보완했습니다. 기존 HA fixture와 통신 mock은 유지합니다.
+- 실제 배포용 영어 문자열과 strings.json을 정합화했습니다. 한국어 번역과 실제 not_supported abort 키를 추가했습니다.
+- 기존 실제 HA 광고 갱신 회귀를 test_coordinator.py로 옮기고 production coordinator의 last_service_info 연결을 검증했습니다. 테스트 개수와 기존 센서 결과 검증을 보존합니다.
+- 원격 Hassfest는 categories를 지원하는 검토 Core `ec18d8b25d1ee39aa8b85a72a170e42bee33228c`의 공식 validator 경로를 사용합니다. 통합 지원 최소를 올리지 않습니다.
+- 현재 환경 실제 버전: `{"python": "3.14.5", "homeassistant": "2026.10.2", "pytest-homeassistant-custom-component": "0.13.373"}`. 각 리포 별도 격리 환경에서 의존성을 설치하고 pip check PASS.
+- `python -m pytest tests/components/jaalee/ -q`: **30 passed**, skip 없음. 최신 중앙 검사기·actionlint·Ruff lint/format·git diff --check PASS.
+- 최소 HA 조합과 최종 head 원격 CI는 이 PR의 갱신된 checks 결과로 확인합니다. 실물 기기·실제 외부 API/서버 검증은 수행하지 않았습니다.
+- 독립 리뷰: 주 담당 root가 해당 작업 트리를 검토했습니다. 제품 분류의 실제 기능 근거, 기존 테스트 보존·의미 있는 파일 이동, fixture 역할 alias, 번역 및 README 관리 영역을 확인했으며 manifest 키 순서 지적 수정 후 추가 회귀 지적 없음.

@@ -11,8 +11,30 @@
   "tests_workflow": "tests.yml",
   "validate_workflow": "validate.yml",
   "installation_links": {
-    "README.md": "#installation",
-    "README.ko.md": "#설치"
+    "README.md": "#hacs-recommended",
+    "README.ko.md": "#hacs-권장"
   },
-  "hacs_default_evidence": "https://github.com/hacs/default/blob/3fa436ca054956f790d89e6cba4ff1bbdf8d9b26/integration#L1083 (verified 2026-10-24)"
+  "hacs_default_evidence": "https://github.com/hacs/default/blob/3fa436ca054956f790d89e6cba4ff1bbdf8d9b26/integration#L1083 (verified 2026-10-24)",
+  "readme": {
+    "title": "Jaalee BLE Integration for Home Assistant",
+    "descriptions": {
+      "en": "Home Assistant custom integration for Jaalee Bluetooth Low Energy (BLE) temperature and humidity sensors.",
+      "ko": "Jaalee 저전력 블루투스(BLE) 온습도 센서를 위한 Home Assistant HACS 커스텀 통합구성요소입니다."
+    },
+    "issues": true,
+    "discussions": true,
+    "license_name": "MIT License",
+    "license_notices": {
+      "en": [],
+      "ko": []
+    },
+    "related_projects": []
+  },
+  "categories_review": {
+    "value": [
+      "sensors.temperature_humidity"
+    ],
+    "integration_type": null,
+    "source": "README Supported devices identifies the Jaalee JHT temperature/humidity/battery beacon; this measures temperature and humidity rather than providing a generic Bluetooth service. Category names verified against official Core taxonomy ec18d8b25d1ee39aa8b85a72a170e42bee33228c."
+  }
 }

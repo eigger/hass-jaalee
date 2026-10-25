@@ -1,16 +1,20 @@
-# Home Assistant용 Jaalee BLE 통합구성요소
+<!-- hass-standards:header:start -->
+# Jaalee BLE Integration for Home Assistant
+
+Jaalee 저전력 블루투스(BLE) 온습도 센서를 위한 Home Assistant HACS 커스텀 통합구성요소입니다.
+
+[English](README.md) | **한국어**
 
 <!-- hass-standards:badges:start -->
 [![Release](https://img.shields.io/github/v/release/eigger/hass-jaalee?style=flat)](https://github.com/eigger/hass-jaalee/releases)
-[![HACS Default](https://img.shields.io/badge/HACS-Default-41BDF5?style=flat)](#설치)
+[![HACS Default](https://img.shields.io/badge/HACS-Default-41BDF5?style=flat)](#hacs-권장)
 [![Home Assistant minimum](https://img.shields.io/badge/HA-%E2%89%A5%202025.1.0-41BDF5?style=flat)](hacs.json)
 [![Tests](https://img.shields.io/github/actions/workflow/status/eigger/hass-jaalee/tests.yml?branch=master&style=flat&label=Tests)](https://github.com/eigger/hass-jaalee/actions/workflows/tests.yml)
 [![Validate](https://img.shields.io/github/actions/workflow/status/eigger/hass-jaalee/validate.yml?branch=master&style=flat&label=Validate)](https://github.com/eigger/hass-jaalee/actions/workflows/validate.yml)
 [![License](https://img.shields.io/github/license/eigger/hass-jaalee?style=flat)](LICENSE)
 [![Downloads](https://img.shields.io/github/downloads/eigger/hass-jaalee/total?style=flat&color=41BDF5&label=Downloads)](https://github.com/eigger/hass-jaalee/releases)
 <!-- hass-standards:badges:end -->
-
-[English](README.md) | **한국어**
+<!-- hass-standards:header:end -->
 
 Jaalee 저전력 블루투스(BLE) 온습도 센서를 위한 Home Assistant 커스텀 통합구성요소입니다.
 
@@ -57,11 +61,18 @@ Jaalee 기기는 Bluetooth 브로드캐스트를 통해 자동으로 검색됩�
 - [문제 해결](docs/ko/troubleshooting.md) ([English](docs/troubleshooting.md))
 - [개발 안내](docs/development.md)
 
+<!-- hass-standards:support:start -->
 ## 지원
 
-- 버그 보고: [GitHub Issues](https://github.com/eigger/hass-jaalee/issues)
-- 질문 및 제안: [GitHub Discussions](https://github.com/eigger/hass-jaalee/discussions)
+- [Issues](https://github.com/eigger/hass-jaalee/issues): 버그를 신고하거나 기능을 요청하세요.
+- [Discussions](https://github.com/eigger/hass-jaalee/discussions): 질문하고 사용 경험을 공유하세요.
+<!-- hass-standards:support:end -->
 
+<!-- hass-standards:related-projects:start -->
+<!-- hass-standards:related-projects:end -->
+
+<!-- hass-standards:license:start -->
 ## 라이선스
 
-이 프로젝트는 MIT 라이선스 하에 배포됩니다 - 자세한 내용은 [LICENSE](LICENSE) 파일을 참조하세요.
+[MIT License](LICENSE) 라이선스로 배포됩니다.
+<!-- hass-standards:license:end -->
