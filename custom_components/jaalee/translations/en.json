@@ -26,7 +26,8 @@
       "reauth_successful": "Re-authentication was successful",
       "no_devices_found": "No devices found on the network",
       "already_in_progress": "This is already being configured. Finish the existing configuration before starting again.",
-      "already_configured": "Device is already configured"
+      "already_configured": "Device is already configured",
+      "not_supported": "Device is not supported"
     }
   },
   "device_automation": {

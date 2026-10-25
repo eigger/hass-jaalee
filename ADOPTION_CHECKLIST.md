@@ -107,3 +107,49 @@ CI-01 .github/workflows/validate.yml: central standards composite action pinned 
 
 - Existing CI workflows are preserved, except hass-kocom-smarthome where matching reviewed central references are synchronized. Existing support minimum and prior exceptions remain.
 - Independent review and remote CI: tracked in this branch's pull request; merge requires resolved actionable findings and successful applicable checks. No real release upload, device or new real HA runtime validation is claimed by these local packaging checks.
+
+
+## 2026-10-25 중앙 검사기 부분 갱신 검증
+
+- 검토한 중앙 SHA: `1863343638014adb8a4001afc8fddc1a27dc500f`; 적용 시작 커밋: `03b0d9215e8619c090825a7e85fe1f2745774331`.
+- 범위: 중앙 pin·standards-ref·검토 기준 기록 정합화 및 누락 standards job 추가. HA 구현·요구 버전은 유지합니다.
+- 로컬: Python 3.14.5 / PyYAML 6.0.3, `python scripts/check_integration.py <target>` (검토한 중앙 source에서 실행): FAIL — 아래 미충족 항목을 확인했으며 성공으로 표시하지 않음.
+- actionlint: PASS. PR CI·독립 리뷰 결과는 PR 링크와 check 결과를 확인합니다. 이 로컬 결과만으로 전체 채택 완료를 주장하지 않습니다.
+- 수정 전에도 최신 검사기로 검사 시 17개 진단이 있었습니다. 이번 검사기가 드러내는 잔여 항목은 다음과 같습니다. 승인 예외나 실패 무시를 추가하지 않았습니다.
+
+```text
+DOC-01 README.md: Exactly one ordered header marker pair required
+DOC-01 README.ko.md: Exactly one ordered header marker pair required
+HA-02 custom_components/jaalee/manifest.json: categories requires 1–3 actual product categories (HA-02 project policy)
+HA-11 custom_components/jaalee/translations/ko.json: Required contract file is missing
+TEST-08 tests/components/jaalee/test_coordinator.py: Required contract file is missing
+HA-13 custom_components/__init__.py: Required contract file is missing
+HA-11 custom_components/jaalee/translations/ko.json: [Errno 2] No such file or directory: 'custom_components/jaalee/translations/ko.json'
+TEST-08 tests/__init__.py: must exist and be empty
+TEST-08 tests/components/__init__.py: must exist and be empty
+TEST-08 tests/components/jaalee/__init__.py: must exist and be empty
+TEST-03 tests/conftest.py: must match the central template exactly
+TEST-08 tests/components/jaalee/conftest.py: Exactly one ordered domain-fixtures marker pair required
+```
+- 독립 리뷰: 별도 review_checker_rollout 담당자가 19개 리포의 workflow 69개·기존 job 100개를 구조 비교했습니다. 새 CI 회귀 지적 없음. 기존 job ID·입력·권한·지원 최소와 통합 코드 보존 및 새 standards job의 중앙 템플릿 일치 확인. 실행 변경 없는 이 기록 추가 전 작업 트리를 검토했습니다.
+
+
+## 2026-10-25 CI 실패 보완 검증
+
+- 이전 부분 갱신의 실패 진단을 실제 수정했습니다. 표준 README 관리 영역과 실제 설치 앵커를 중앙 렌더러로 적용하고, 제품 기능에 근거한 manifest categories 및 검토 근거를 기록했습니다. 기존 제품별 사용 설명·지원 최소·회귀 테스트를 보존합니다.
+- 범위: custom_components namespace 파일, 정확한 중앙 루트 테스트 설정·빈 package 파일, domain fixture 관리 영역을 보완했습니다. 기존 HA fixture와 통신 mock은 유지합니다.
+- 실제 배포용 영어 문자열과 strings.json을 정합화했습니다. 한국어 번역과 실제 not_supported abort 키를 추가했습니다.
+- 기존 실제 HA 광고 갱신 회귀를 test_coordinator.py로 옮기고 production coordinator의 last_service_info 연결을 검증했습니다. 테스트 개수와 기존 센서 결과 검증을 보존합니다.
+- 원격 Hassfest는 categories를 지원하는 검토 Core `ec18d8b25d1ee39aa8b85a72a170e42bee33228c`의 공식 validator 경로를 사용합니다. 통합 지원 최소를 올리지 않습니다.
+- 현재 환경 실제 버전: `{"python": "3.14.5", "homeassistant": "2026.10.2", "pytest-homeassistant-custom-component": "0.13.373"}`. 각 리포 별도 격리 환경에서 의존성을 설치하고 pip check PASS.
+- `python -m pytest tests/components/jaalee/ -q`: **30 passed**, skip 없음. 최신 중앙 검사기·actionlint·Ruff lint/format·git diff --check PASS.
+- 최소 HA 조합과 최종 head 원격 CI는 이 PR의 갱신된 checks 결과로 확인합니다. 실물 기기·실제 외부 API/서버 검증은 수행하지 않았습니다.
+- 독립 리뷰: 주 담당 root가 해당 작업 트리를 검토했습니다. 제품 분류의 실제 기능 근거, 기존 테스트 보존·의미 있는 파일 이동, fixture 역할 alias, 번역 및 README 관리 영역을 확인했으며 manifest 키 순서 지적 수정 후 추가 회귀 지적 없음.
+
+
+### 2026-10-25 Standards workflow 분리 검증
+
+- 분리 시작 커밋: `f4cbbadf9740b2cd8f286b4641d2be653f6c87fa`; 검토 중앙 소스 `ca740d88b32fa5dcbc94c41fce2908450c76ed50` (중앙 PR #24). Validate는 HACS/Hassfest job을 그대로 유지하며 중앙 job만 standards.yml로 이동하고 표시 이름을 Standards로 변경합니다.
+- 독립 리뷰: root 구현의 19개 리포에 대해 별도 fix_scale_atflee_ci 담당자가 Validate job 19개와 이동 job 19개의 YAML 정의를 비교했습니다. 파일 이동·표시 이름 외 실제 검사 단계·이벤트·권한·timeout·입력 변경 없음. 중앙 위치 인식 변경은 root가 별도 독립 리뷰했습니다.
+- 로컬: 새 중앙 검사기·actionlint·diff 검사 PASS. 중앙 전체232개·관련38개 회귀 테스트와 양 배치19개 동등성 검사 PASS. 모든 대상 기본 브랜치의 branch protection·rulesets 조회에서 필수 검사 이름 설정이 없어 이름 변경으로 인한 대기 충돌 없음. 원격 CI는 이 PR의 최신 head에서 확인합니다.
+- 검사 기준을 추가하거나 완화하지 않았으며 기존 inline 배치도 같은 기준으로 지원합니다. 실제 runtime·지원 최소·의존성은 이 파일 분리에서 변경하지 않습니다.

@@ -1,0 +1,79 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "description": "설정할 기기를 선택하세요",
+        "data": {
+          "address": "기기"
+        }
+      },
+      "bluetooth_confirm": {
+        "description": "{name} 기기를 설정하시겠습니까?"
+      },
+      "get_encryption_key": {
+        "description": "센서가 전송한 데이터가 암호화되어 있습니다. 복호화하려면 32자리 16진수 바인드키가 필요합니다.",
+        "data": {
+          "bindkey": "바인드키"
+        }
+      }
+    },
+    "error": {
+      "decryption_failed": "입력한 바인드키로 센서 데이터를 복호화할 수 없습니다. 키를 확인한 뒤 다시 시도하세요.",
+      "expected_32_characters": "32자리 16진수 바인드키를 입력하세요."
+    },
+    "abort": {
+      "reauth_successful": "재인증되었습니다",
+      "no_devices_found": "검색된 기기가 없습니다",
+      "already_in_progress": "이미 설정이 진행 중입니다. 기존 설정을 완료한 뒤 다시 시작하세요.",
+      "already_configured": "이미 설정된 기기입니다",
+      "not_supported": "지원하지 않는 기기입니다"
+    }
+  },
+  "device_automation": {
+    "trigger_subtype": {
+      "press": "누르기",
+      "double_press": "두 번 누르기",
+      "triple_press": "세 번 누르기",
+      "long_press": "길게 누르기",
+      "long_double_press": "길게 두 번 누르기",
+      "long_triple_press": "길게 세 번 누르기",
+      "hold_press": "누른 상태 유지",
+      "rotate_right": "오른쪽으로 돌리기",
+      "rotate_left": "왼쪽으로 돌리기"
+    },
+    "trigger_type": {
+      "button": "버튼 \"{subtype}\"",
+      "dimmer": "조광기 \"{subtype}\""
+    }
+  },
+  "entity": {
+    "event": {
+      "button": {
+        "state_attributes": {
+          "event_type": {
+            "state": {
+              "press": "누르기",
+              "double_press": "두 번 누르기",
+              "triple_press": "세 번 누르기",
+              "long_press": "길게 누르기",
+              "long_double_press": "길게 두 번 누르기",
+              "long_triple_press": "길게 세 번 누르기",
+              "hold_press": "누른 상태 유지"
+            }
+          }
+        }
+      },
+      "dimmer": {
+        "state_attributes": {
+          "event_type": {
+            "state": {
+              "rotate_left": "왼쪽으로 돌리기",
+              "rotate_right": "오른쪽으로 돌리기"
+            }
+          }
+        }
+      }
+    }
+  }
+}

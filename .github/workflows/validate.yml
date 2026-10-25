@@ -1,14 +1,13 @@
 # Shared standards; upstream action SHAs verified 2026-10-18.
 name: Validate
-on:
+'on':
   push:
     branches:
-      - main
-      - master
-  pull_request:
-  workflow_dispatch:
+    - master
+  pull_request: null
+  workflow_dispatch: null
   schedule:
-    - cron: "23 3 * * 1"
+  - cron: 23 3 * * 1
 permissions:
   contents: read
 concurrency:
@@ -16,4 +15,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   validate:
-    uses: eigger/hass-repo-standards/.github/workflows/validate-integration.yml@c696e15c164daa6c7deca4140b899bd0e80e8846
+    uses: eigger/hass-repo-standards/.github/workflows/validate-integration.yml@ca740d88b32fa5dcbc94c41fce2908450c76ed50
+    with:
+      # Reviewed official Core validator supports manifest categories.
+      hassfest-core-ref: ec18d8b25d1ee39aa8b85a72a170e42bee33228c
