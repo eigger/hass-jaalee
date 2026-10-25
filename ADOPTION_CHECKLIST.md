@@ -153,3 +153,10 @@ TEST-08 tests/components/jaalee/conftest.py: Exactly one ordered domain-fixtures
 - 독립 리뷰: root 구현의 19개 리포에 대해 별도 fix_scale_atflee_ci 담당자가 Validate job 19개와 이동 job 19개의 YAML 정의를 비교했습니다. 파일 이동·표시 이름 외 실제 검사 단계·이벤트·권한·timeout·입력 변경 없음. 중앙 위치 인식 변경은 root가 별도 독립 리뷰했습니다.
 - 로컬: 새 중앙 검사기·actionlint·diff 검사 PASS. 중앙 전체232개·관련38개 회귀 테스트와 양 배치19개 동등성 검사 PASS. 모든 대상 기본 브랜치의 branch protection·rulesets 조회에서 필수 검사 이름 설정이 없어 이름 변경으로 인한 대기 충돌 없음. 원격 CI는 이 PR의 최신 head에서 확인합니다.
 - 검사 기준을 추가하거나 완화하지 않았으며 기존 inline 배치도 같은 기준으로 지원합니다. 실제 runtime·지원 최소·의존성은 이 파일 분리에서 변경하지 않습니다.
+
+## 2026-10-25 central v1.0.0 partial reference migration
+
+- User request: migrate current central workflow/action references and standards metadata to immutable release `v1.0.0` (`44349ee5621eea5d80e5c427f7a2435d2c2491bb`) from base `9dcd8ff6ec60010da738cd5f703b86d112e900c5`.
+- Scope: central `uses`, reusable-workflow `standards-ref`, `.hass-standards.json`, and the current STANDARDS header only. Historical refs (ca740d88b32fa5dcbc94c41fce2908450c76ed50, ca740d88b32fa5dcbc94c41fce2908450c76ed50) remain as evidence; runtime code, dependencies, support minimum, manifest, integration version and tests are unchanged.
+- Verification: Python 3.14 central checker before/after, published immutable release attestation, focused reference/ZIP checks, actionlint and diff check. PR CI and merge remain pending.
+- Review: generated reference change self-review under GOV-05; no device or HA runtime test is claimed for this refs-only PR.
