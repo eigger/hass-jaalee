@@ -1,0 +1,18 @@
+version: 2
+updates:
+- package-ecosystem: github-actions
+  directory: /
+  schedule:
+    interval: daily
+  allow:
+  - dependency-name: eigger/hass-repo-standards
+  - dependency-name: eigger/hass-repo-standards/*
+  cooldown:
+    exclude:
+    - eigger/hass-repo-standards
+    - eigger/hass-repo-standards/*
+  groups:
+    central-standards:
+      patterns:
+      - eigger/hass-repo-standards
+      - eigger/hass-repo-standards/*

@@ -13,9 +13,8 @@ concurrency:
   cancel-in-progress: true
 jobs:
   current:
-    uses: eigger/hass-repo-standards/.github/workflows/python-tests.yml@v1.0.1
+    uses: eigger/hass-repo-standards/.github/workflows/python-tests.yml@v1.1.1
     with:
-      standards-ref: c9b4553184f9c27bdbe7bf8564eaf10153e9575b
       domain: jaalee
       python-versions: '["3.14"]'
       lint-python-version: '3.14'
@@ -25,9 +24,8 @@ jobs:
       ha-components: 'bluetooth sensor binary_sensor event'
       dependency-modes: '["current"]'
   minimum-ha:
-    uses: eigger/hass-repo-standards/.github/workflows/python-tests.yml@v1.0.1
+    uses: eigger/hass-repo-standards/.github/workflows/python-tests.yml@v1.1.1
     with:
-      standards-ref: c9b4553184f9c27bdbe7bf8564eaf10153e9575b
       domain: jaalee
       python-versions: '["3.13"]'
       lint-python-version: '3.14'

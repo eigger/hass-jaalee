@@ -1,8 +1,8 @@
 {
   "standards": {
     "kind": "release",
-    "tag": "v1.0.1",
-    "resolved_sha": "c9b4553184f9c27bdbe7bf8564eaf10153e9575b"
+    "tag": "v1.1.1",
+    "resolved_sha": "9876b521d401071345a13bd508f43d220852c77b"
   },
   "repository": "eigger/hass-jaalee",
   "default_branch": "master",
@@ -41,5 +41,9 @@
     ],
     "integration_type": null,
     "source": "README Supported devices identifies the Jaalee JHT temperature/humidity/battery beacon; this measures temperature and humidity rather than providing a generic Bluetooth service. Category names verified against official Core taxonomy ec18d8b25d1ee39aa8b85a72a170e42bee33228c."
+  },
+  "standards_update": {
+    "provider": "dependabot",
+    "workflow": "update_standards.yml"
   }
 }
