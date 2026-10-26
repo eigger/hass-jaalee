@@ -13,7 +13,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   current:
-    uses: eigger/hass-repo-standards/.github/workflows/python-tests.yml@v1.1.1
+    uses: eigger/hass-repo-standards/.github/workflows/python-tests.yml@v1.1.2
     with:
       domain: jaalee
       python-versions: '["3.14"]'
@@ -24,7 +24,7 @@ jobs:
       ha-components: 'bluetooth sensor binary_sensor event'
       dependency-modes: '["current"]'
   minimum-ha:
-    uses: eigger/hass-repo-standards/.github/workflows/python-tests.yml@v1.1.1
+    uses: eigger/hass-repo-standards/.github/workflows/python-tests.yml@v1.1.2
     with:
       domain: jaalee
       python-versions: '["3.13"]'
