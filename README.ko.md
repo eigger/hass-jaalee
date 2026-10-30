@@ -12,7 +12,7 @@ Jaalee 저전력 블루투스(BLE) 온습도 센서를 위한 Home Assistant HAC
 [![Tests](https://img.shields.io/github/actions/workflow/status/eigger/hass-jaalee/tests.yml?branch=master&style=flat&label=Tests)](https://github.com/eigger/hass-jaalee/actions/workflows/tests.yml)
 [![Validate](https://img.shields.io/github/actions/workflow/status/eigger/hass-jaalee/validate.yml?branch=master&style=flat&label=Validate)](https://github.com/eigger/hass-jaalee/actions/workflows/validate.yml)
 [![License](https://img.shields.io/github/license/eigger/hass-jaalee?style=flat)](LICENSE)
-[![Downloads](https://img.shields.io/github/downloads/eigger/hass-jaalee/total?style=flat&color=41BDF5&label=Downloads)](https://github.com/eigger/hass-jaalee/releases)
+[![Downloads](https://img.shields.io/github/downloads/eigger/hass-jaalee/latest/total?style=flat&color=41BDF5&label=Downloads)](https://github.com/eigger/hass-jaalee/releases)
 <!-- hass-standards:badges:end -->
 <!-- hass-standards:header:end -->
 
