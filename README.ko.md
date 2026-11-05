@@ -1,13 +1,13 @@
 <!-- hass-standards:header:start -->
-# Jaalee BLE Integration for Home Assistant
+# Jaalee BLE for Home Assistant
 
-Jaalee 저전력 블루투스(BLE) 온습도 센서를 위한 Home Assistant HACS 커스텀 통합구성요소입니다.
+Jaalee Bluetooth LE 온습도 센서를 위한 Home Assistant 커스텀 통합입니다.
 
 [English](README.md) | **한국어**
 
 <!-- hass-standards:badges:start -->
 [![Release](https://img.shields.io/github/v/release/eigger/hass-jaalee?style=flat)](https://github.com/eigger/hass-jaalee/releases)
-[![HACS Default](https://img.shields.io/badge/HACS-Default-41BDF5?style=flat)](#hacs-권장)
+[![HACS Default](https://img.shields.io/badge/HACS-Default-41BDF5?style=flat)](#설치)
 [![Home Assistant minimum](https://img.shields.io/badge/HA-%E2%89%A5%202025.1.0-41BDF5?style=flat)](hacs.json)
 [![Tests](https://img.shields.io/github/actions/workflow/status/eigger/hass-jaalee/tests.yml?branch=master&style=flat&label=Tests)](https://github.com/eigger/hass-jaalee/actions/workflows/tests.yml)
 [![Validate](https://img.shields.io/github/actions/workflow/status/eigger/hass-jaalee/validate.yml?branch=master&style=flat&label=Validate)](https://github.com/eigger/hass-jaalee/actions/workflows/validate.yml)
@@ -25,28 +25,23 @@ Jaalee 저전력 블루투스(BLE) 온습도 센서를 위한 Home Assistant 커
 원격 Bluetooth 연결은 [Bluetooth proxy 설정 안내](https://github.com/eigger/hass-repo-standards/blob/main/docs/bluetooth.ko.md)를 따르세요.
 기기별 상세 안내와 문제 해결은 [docs/ko/user-guide.md](docs/ko/user-guide.md) 및 [docs/ko/troubleshooting.md](docs/ko/troubleshooting.md)를 확인하세요.
 
-## 요구 사항
+## 요구사항
 
-- Home Assistant 2025.1.0 이상
-- 작동 중인 Bluetooth 어댑터 또는 ESPHome Bluetooth 프록시
-- 주변에서 브로드캐스팅 중인 Jaalee BLE 기기 (제조사 ID 76 / 0x004C, 서비스 UUID 0xF525)
+- **Home Assistant:** 2025.1.0 이상.
+- **Bluetooth:** 정상 동작하는 Bluetooth 어댑터 또는 ESPHome Bluetooth 프록시.
+- **기기:** 주변에서 광고 중인 Jaalee BLE 기기(제조사 ID 76 / `0x004C`, 서비스 UUID `0xF525`).
+
+<a name="hacs-권장"></a>
 
 ## 설치
-
-### HACS (권장)
 
 <!-- hass-standards:installation:start -->
 [![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=eigger&repository=hass-jaalee)
 <!-- hass-standards:installation:end -->
 
-1. Home Assistant에서 HACS를 엽니다.
-2. **Jaalee**를 검색해 엽니다.
-3. **다운로드**를 클릭한 후 Home Assistant를 다시 시작합니다.
-
-### 수동 설치
-
-1. `custom_components/jaalee` 디렉터리를 Home Assistant의 `<config>/custom_components/` 경로에 복사합니다.
-2. Home Assistant를 다시 시작합니다.
+1. 위 배지를 클릭해 마켓플레이스에서 저장소를 엽니다.
+2. 저장소를 직접 추가하려면 **설정 → 마켓플레이스 → 링크에서 추가**에서 <https://github.com/eigger/hass-jaalee>을 입력합니다. 안내가 표시되면 GitHub 계정을 연결합니다.
+3. **설치**를 선택합니다. 재시작 안내가 표시되면 Home Assistant를 재시작합니다. 설치가 끝나면 [설정](#설정)으로 이동합니다.
 
 ## 설정
 
