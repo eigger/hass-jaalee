@@ -1,5 +1,5 @@
 <!-- hass-standards:header:start -->
-# Jaalee BLE Integration for Home Assistant
+# Jaalee BLE for Home Assistant
 
 Home Assistant custom integration for Jaalee Bluetooth Low Energy (BLE) temperature and humidity sensors.
 
@@ -7,7 +7,7 @@ Home Assistant custom integration for Jaalee Bluetooth Low Energy (BLE) temperat
 
 <!-- hass-standards:badges:start -->
 [![Release](https://img.shields.io/github/v/release/eigger/hass-jaalee?style=flat)](https://github.com/eigger/hass-jaalee/releases)
-[![HACS Default](https://img.shields.io/badge/HACS-Default-41BDF5?style=flat)](#hacs-recommended)
+[![HACS Default](https://img.shields.io/badge/HACS-Default-41BDF5?style=flat)](#installation)
 [![Home Assistant minimum](https://img.shields.io/badge/HA-%E2%89%A5%202025.1.0-41BDF5?style=flat)](hacs.json)
 [![Tests](https://img.shields.io/github/actions/workflow/status/eigger/hass-jaalee/tests.yml?branch=master&style=flat&label=Tests)](https://github.com/eigger/hass-jaalee/actions/workflows/tests.yml)
 [![Validate](https://img.shields.io/github/actions/workflow/status/eigger/hass-jaalee/validate.yml?branch=master&style=flat&label=Validate)](https://github.com/eigger/hass-jaalee/actions/workflows/validate.yml)
@@ -27,26 +27,21 @@ See [docs/user-guide.md](docs/user-guide.md) and [docs/troubleshooting.md](docs/
 
 ## Requirements
 
-- Home Assistant 2025.1.0 or newer
-- Working Bluetooth adapter or ESPHome Bluetooth proxy
-- Jaalee BLE beacon advertising nearby (Manufacturer ID 76 / 0x004C, service UUID 0xF525)
+- **Home Assistant:** 2025.1.0 or later.
+- **Bluetooth:** A working Bluetooth adapter or ESPHome Bluetooth proxy.
+- **Device:** A nearby Jaalee BLE beacon that is advertising (manufacturer ID 76 / `0x004C`, service UUID `0xF525`).
+
+<a name="hacs-recommended"></a>
 
 ## Installation
-
-### HACS (Recommended)
 
 <!-- hass-standards:installation:start -->
 [![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=eigger&repository=hass-jaalee)
 <!-- hass-standards:installation:end -->
 
-1. Open HACS in Home Assistant.
-2. Search for **Jaalee** and open it.
-3. Click **Download**, then restart Home Assistant.
-
-### Manual Installation
-
-1. Copy the `custom_components/jaalee` folder into your Home Assistant `<config>/custom_components/` directory.
-2. Restart Home Assistant.
+1. Click the badge above to open the repository in Marketplace.
+2. If you need to add it yourself, go to **Settings → Marketplace → Add from link** and enter <https://github.com/eigger/hass-jaalee>. Connect GitHub if prompted.
+3. Select **Install**. Restart Home Assistant if prompted, then continue to [Configuration](#configuration).
 
 ## Configuration
 
